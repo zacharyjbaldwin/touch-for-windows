@@ -13,7 +13,7 @@ $ touch index.html
 Successfully created 'index.html'
 ```
 
-It even supports creating multiple files at once.
+It even supports creating multiple files at once, as shown below.
 
 ```bash
 $ touch index.html app.js package.json
@@ -21,3 +21,6 @@ Successfully created 'index.html'
 Successfully created 'app.js'
 Successfully created 'package.json'
 ```
+
+## License
+MIT
