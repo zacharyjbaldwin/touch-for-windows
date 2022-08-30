@@ -1,0 +1,30 @@
+{
+  "name": "touch-for-windows",
+  "version": "1.0.2",
+  "description": "A Windows implementation of Unix's 'touch' command written in Javascript.",
+  "main": "bin/cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zacharyjbaldwin/touch-for-windows.git"
+  },
+  "keywords": [
+    "touch",
+    "windows"
+  ],
+  "author": "Zachary J. Baldwin <zacharyjbaldwin@gmail.com>",
+  "license": "MIT",
+  "bin": {
+    "touch": "./bin/cli.js"
+  },
+  "bugs": {
+    "url": "https://github.com/zacharyjbaldwin/touch-for-windows/issues"
+  },
+  "homepage": "https://github.com/zacharyjbaldwin/touch-for-windows#readme",
+  "dependencies": {
+    "fswin": "^3.22.106",
+    "yargs": "^17.5.1"
+  }
+}
