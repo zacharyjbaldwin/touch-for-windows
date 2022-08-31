@@ -21,31 +21,28 @@ const argv = require('yargs/yargs')(process.argv.slice(2))
     .describe('version', 'output version information and exit')
     .argv;
 
-const FILENAME = argv._[0];
-if (!FILENAME) {
-    console.log('No filename specified. Use touch --help for usage.');
-    process.exit(1);
-}
-
-if (!fs.existsSync(FILENAME)) {
-    fs.writeFileSync(FILENAME, '')
-}
-
-if (argv.a && argv.m || (!argv.a && !argv.m && !argv.h)) {
-    const now = new Date();
-    fs.utimesSync(FILENAME, now, now);
-}
-
-if (argv.a && !argv.m) {
-    fs.utimesSync(FILENAME, new Date(), fs.statSync(FILENAME).mtime);
-}
-
-if (!argv.a && argv.m) {
-    fs.utimesSync(FILENAME, fs.statSync(FILENAME).atime, new Date());
-}
-
-if (argv.h) {
-    fswin.getAttributes(FILENAME, (attr) => {
-        fswin.setAttributesSync(FILENAME, { IS_HIDDEN: !attr.IS_HIDDEN });
-    });
+const FILES = argv._;
+for (let FILENAME of FILES) {
+    if (!FILENAME) {
+        console.log('No filename specified. Use touch --help for usage.');
+        process.exit(1);
+    }
+    if (!fs.existsSync(FILENAME)) {
+        fs.writeFileSync(FILENAME, '')
+    }
+    if (argv.a && argv.m || (!argv.a && !argv.m && !argv.h)) {
+        const now = new Date();
+        fs.utimesSync(FILENAME, now, now);
+    }
+    if (argv.a && !argv.m) {
+        fs.utimesSync(FILENAME, new Date(), fs.statSync(FILENAME).mtime);
+    }
+    if (!argv.a && argv.m) {
+        fs.utimesSync(FILENAME, fs.statSync(FILENAME).atime, new Date());
+    }
+    if (argv.h) {
+        fswin.getAttributes(FILENAME, (attr) => {
+            fswin.setAttributesSync(FILENAME, { IS_HIDDEN: !attr.IS_HIDDEN });
+        });
+    }
 }

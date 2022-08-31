@@ -1,12 +1,15 @@
 # touch-for-windows
 
-A Windows implementation of Unix's `touch` command written in Javascript.
+A Windows implementation of Unix's `touch` command written in Javascript. This package is built for Windows specifically, and likely will not work on other systems.
 
 ## Install
 
 For users: `npm install -g touch-for-windows`
 
-For developers: `git clone https://www.github.com/zacharyjbaldwin/touch-for-windows.git`
+For developers: 
+1. `git clone https://www.github.com/zacharyjbaldwin/touch-for-windows.git`
+2. `cd touch-for-windows`
+3. `npm install`
 
 ## Usage
 
@@ -33,3 +36,5 @@ Change only the modification/write time: `touch -m my-file.txt`
 Change both access time and modification/write time: `touch -am my-file.txt` (this is the same behavior as simply `touch my-file.txt`)
 
 Toggle hidden attribute of a file: `touch -h my-file.txt` (hides/unhides a file if it exists or creates a hidden file if it does not)
+
+Touch multiple files: `touch my-file.txt package.json another-file.js`
