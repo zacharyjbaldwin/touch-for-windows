@@ -1,6 +1,6 @@
 {
   "name": "touch-for-windows",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A Windows implementation of Unix's 'touch' command written in Javascript.",
   "main": "bin/cli.js",
   "scripts": {
