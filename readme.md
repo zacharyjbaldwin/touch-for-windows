@@ -28,11 +28,11 @@ For developers:
 
 ## Special Formatting
 
-For creating mutliple files with successive numbering, you can use a shortcut like this:
+For touching mutliple files with successive numbering, you can use a shortcut like this:
 
 `touch my-file{0...3}.txt`
 
-This command will create `my-file0.txt`, `my-file1.txt`, `my-file2.txt`, and `my-file3.txt`.
+This command will touch `my-file0.txt`, `my-file1.txt`, `my-file2.txt`, and `my-file3.txt`.
 
 All files will have the same attributes based on the flags provided to the command.
 
@@ -54,7 +54,7 @@ Manually specify the date to use: `touch -d="8/25/2054 6:35:56 AM" my-file.txt`
 
 Using multiple flags together: `touch -amh -d="5/4/2020" my-file.txt`
 
-Creating multiple files: `touch my-file{0...5}.txt`
+Touching multiple files: `touch my-file{0...5}.txt`
 
 ## License
 
